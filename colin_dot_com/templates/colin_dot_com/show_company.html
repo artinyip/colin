@@ -1,0 +1,55 @@
+{% extends "colin_dot_com/colin_dot_com.html" %}
+
+{% block navigation %}
+    <ul class="breadcrumbs">
+      <li><a href="/">home</a></li>
+      <li><a href="/companies">companies</a> </li>
+      <li><a class="current" href="/companies/{{ company.id }}">{{ company.name }}</a></li>
+    </ul>
+{% endblock %}
+
+{% block content %}
+    {% if company %}
+        <div class="rowset">
+            <div class="row">
+                <div class="small-12 large-10 columns">
+                    <div class="intro">Artin, I'd like you to meet <span class="company_name">{{ company.name }}</span></div>
+                </div>
+                <!-- {%  if company.logo %}
+                    <div class="small-6 large-2 columns">
+                        <img src="{{ MEDIA_URL }}/{{ company.logo }}">
+                    </div>
+                {% endif %} -->
+            </div>
+            <div class="row">
+
+                <div class="small-6 columns end">
+                    <div class="blurb">"{{ company.blurb }}"</div>
+                </div>
+            </div>
+            <div class="row">
+
+                <div class="small-6 large-4 columns">
+                    <div class="address"> {{ company.address_line_1 }}<br />{{ company.address_line_2 }}</div>
+                </div>
+                <div class="small-6 large-4 columns end">
+                    <div class="message_me">Message</div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            {% for project in company.project_set.all %}
+                <div class="gallery rowset">
+                    {% with project.photo_set.all|first as photo %}
+                        {% if photo %}
+                            <div class="small-6 large-3 columns end">
+                                <img src="{{ MEDIA_URL }}/{{ photo.image }}">
+                                <!-- <i>{{ project.name }}</i> -->
+                            </div>
+                        {% endif %}
+                    {% endwith %}
+                </div>
+            {% endfor %}
+        </div>
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends "colin_dot_com/colin_dot_com.html" %}
+
+{% block navigation %}
+    <ul class="breadcrumbs">
+      <li><a href="/">home</a></li>
+      <li><a class="current" href="/companies">companies</a> </li>
+    </ul>
+{% endblock %}
+
+{% block content %}
+    {% if companies %}
+        <table>
+        {% for company in companies %}
+            <tr>
+                <td>{{ company.name }}</td>
+                <td>{{ company.date_added }}</td>
+                {% if company.blurb %}
+                    <td>{{ company.blurb }}</td>
+                {%  else %}
+                    <td>No description provided.</td>
+                {%  endif %}
+                <td><a href="./{{ company.id }}">link</a></td>
+            </tr>
+        {% endfor %}
+        </table>
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+
+{% load staticfiles %}
+
+<html>
+    <head>
+        <title>bauble</title>
+        <link type="text/css" rel="stylesheet" href="{% static 'colin_dot_com/foundation.min.css' %}">
+        <link type="text/css" rel="stylesheet" href="{% static 'colin_dot_com/base.css' %}">
+        <link href='https://fonts.googleapis.com/css?family=Playfair+Display:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+        <script src="{% static 'colin_dot_com/selectize.min.js' %}"></script>
+    </head>
+    <body>
+        <div class="row">
+            <div class="small-12 large-8 small-centered columns">
+                <h1>bauble</h1>
+                <div id="nav">{% block navigation %}{% endblock %}</div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="small-12 large-8 small-centered columns">
+                {% block content %} {% endblock %}
+            </div>
+        </div>
+    </body>
+</html>

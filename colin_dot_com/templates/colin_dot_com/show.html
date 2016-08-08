@@ -1,0 +1,39 @@
+{% extends "colin_dot_com/bauble_dot_com.html" %}
+
+{% block navigation %}
+    <ul class="breadcrumbs">
+      <li><a href="/">home</a></li>
+      <li><a href="/products">products</a> </li>
+      <li><a class="current" href="/products/{{ product.id }}">{{ product.name }}</a></li>
+    </ul>
+{% endblock %}
+
+{% block content %}
+    {% if product %}
+        <div class="row">
+            <div class="small-12 columns">
+                <h1>{{ product.name }}</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="small-12 large-6 columns">
+                <img src="{{ MEDIA_URL }}/{{ product.image }}" >
+            </div>
+            <div class="small-12 large-6 columns">
+                <div class="product_description">{{ product.description }}</div>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="small-6 columns">
+                <p> <strong> price </strong> {{ product.price }}</p>
+                <p> <strong> size </strong> {{ product.short_size }}</p>
+                <p> <strong> color </strong> {{ product.color }}</p>
+            </div>
+            <div class="small-6 columns">
+                <p> <strong> material </strong> {{ product.material }}</p>
+                <p> <strong> posted </strong> {{ product.pub_date }}</p>
+            </div>
+        </div>
+    {% endif %}
+{% endblock %}

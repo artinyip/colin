@@ -1,0 +1,75 @@
+html {
+    font-size: 100%;
+}
+
+body {
+    background-color: #F5F5F1;
+    font-size: 1em;
+}
+
+
+body, h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', 'Arial', sans-serif;
+}
+
+
+.intro {
+    font-size: 2.3em;
+    letter-spacing: -.05em;
+    font-weight: bold;
+}
+
+.rowset {
+    margin: 2em 0;
+}
+
+.header {
+    background-color: #fff;
+}
+
+.top-bar, .top-bar ul {
+    background-color: #fff;
+}
+
+.top-bar .menu a {
+    font-weight: lighter;
+    color: #231F20;
+    font-size: .8em;
+    letter-spacing: -.05em;
+}
+
+strong.site_title{
+    letter-spacing: -.05em;
+    font-size: 1.9em;
+    color: #FDBB11;
+}
+
+.gallery img {
+    background: #fff;
+    padding: 5px;
+}
+
+.top-bar input {
+    border-radius:3px;
+    max-height: 30px;
+    min-width: 300px;
+    font-size: .8em;
+
+
+}
+
+.breadcrumbs a,
+a,
+.company_name {
+    color: #FDBB11;
+}
+
+.blurb {
+    padding: 40px;
+    background: #fff;
+    margin: 20px 0;
+    font-style: italic;
+    border-radius:4px;
+    box-shadow: 5px 5px 2px #E2E2E2;
+
+}

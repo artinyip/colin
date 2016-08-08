@@ -1,0 +1,26 @@
+{% extends "colin_dot_com/bauble_dot_com.html" %}
+
+{% block navigation %}
+    <ul class="breadcrumbs">
+      <li><a href="/">home</a></li>
+      <li><a href="/products">products</a> </li>
+      <li><a class="current" href="/products/add">add</a></li>
+    </ul>
+{% endblock %}
+
+{% block content %}
+    <form action="/products/add/" method="post" enctype="multipart/form-data">
+        {{ form.as_p }}
+        <input type="submit" value="add">
+        {% csrf_token %}
+    </form>
+    <script>
+        $(document).ready(function() {
+            $("ul.errorlist").each(function (index) {
+                $(this).appendTo($(this).parent());
+            });
+        });
+    </script>
+
+});
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends "colin_dot_com/bauble_dot_com.html" %}
+
+{% block navigation %}
+    <ul class="breadcrumbs">
+      <li><a href="/">home</a></li>
+      <li><a class="current" href="/products">products</a> </li>
+    </ul>
+{% endblock %}
+
+{% block content %}
+    {% if products %}
+        <table>
+        {% for product in products %}
+            <tr>
+                <td>{{ product.name }}</td>
+                <td>{{ product.pub_date }}</td>
+                {% if product.description %}
+                    <td>{{ product.description }}</td>
+                {%  else %}
+                    <td>No description provided.</td>
+                {%  endif %}
+                <td><a href="./{{ product.id }}">link</a></td>
+            </tr>
+        {% endfor %}
+        </table>
+    {% endif %}
+{% endblock %}

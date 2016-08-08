@@ -1,0 +1,48 @@
+{% extends "colin_dot_com/bauble_dot_com.html" %}
+
+{% block navigation %}
+    <ul class="breadcrumbs">
+      <li><a href="/">home</a></li>
+      <li><a href="/products">products</a> </li>
+      <li><a class="current" href="/products/add">add</a></li>
+    </ul>
+{% endblock %}
+
+{% block content %}
+    <form action="/products/add/" method="post" enctype="multipart/form-data">
+        <label>name<input type="text" placeholder="Name" name="name"></label>
+        <label>description
+            <textarea placeholder="Describe your product. Let people know what makes it special." name="description"></textarea>
+        </label>
+        <label>image
+            <input type="file" name="image">
+        </label>
+        <label>price
+            <input type="number" placeholder="Price" name="price">
+        </label>
+        </label>
+        <label>size
+            <select name="size">
+                {% for size in sizes %}
+                    <option value="{{ size.name }}">{{ size.name }}</option>
+                {% endfor %}
+            </select>
+        </label>
+        <label>color
+            <select class="color" name="color">
+                {% for color in colors %}
+                    <option value="{{ color.name }}">{{ color.name }}</option>
+                {% endfor %}
+            </select>
+        </label>
+        <label>material
+            <select class="material" name="material">
+                {% for material in materials %}
+                    <option value="{{ material.name }}">{{ material.name }}</option>
+                {% endfor %}
+            </select>
+        </label>
+        <input type="submit" value="add">
+        {% csrf_token %}
+    </form>
+{% endblock %}

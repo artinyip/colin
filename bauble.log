@@ -1,0 +1,6 @@
+[30/Jul/2016 15:58:12] DEBUG [django.db.backends:89] (0.024) 
+            SELECT name, type FROM sqlite_master
+            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
+            ORDER BY name; args=None
+[30/Jul/2016 15:58:12] DEBUG [django.db.backends:89] (0.000) SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"; args=()
+[30/Jul/2016 15:58:13] DEBUG [django.db.backends:89] (0.001) SELECT "bauble_dot_com_product"."id", "bauble_dot_com_product"."name", "bauble_dot_com_product"."pub_date", "bauble_dot_com_product"."description", "bauble_dot_com_product"."material_id", "bauble_dot_com_product"."color_id", "bauble_dot_com_product"."price", "bauble_dot_com_product"."short_size_id", "bauble_dot_com_product"."image", "bauble_dot_com_product"."short_url" FROM "bauble_dot_com_product" ORDER BY "bauble_dot_com_product"."pub_date" DESC LIMIT 100; args=()
